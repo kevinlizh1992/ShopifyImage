@@ -9,38 +9,37 @@ use Auth;
 
 class ImageController extends Controller
 {
-
+    //shows all posted images
     public function index(){
-        $images = Image::paginate(6); //use pagination instead of Image::all()
+        $images = Image::paginate(6); //paginate after 6 images
         return view('welcome')->with('images', $images);
     }
 
+    //post image
     public function post(Request $request){
         $this->validate($request, [
-            'image' => 'required' //make sure its an image(s)
+            'image' => 'required' //make sure request is an/are image(s)
         ]);
 
-        //image that comes in is an array, so we need to loop
+        //loop over images to give each one a name, save it to images folder and create/save an instance.
         $images = $request->image;
         foreach($images as $image){
-            $image_new_name = time() . $image->getClientOriginalName();
-            //move this image to the images folder
-            $image->move('images', $image_new_name);
-            //create record
-            $post = new Image; //create the new image called $post
-            $post->user_id = Auth::user()->id; //set it's user_id to the currently authenticated user.
+            $image_new_name = time() . $image->getClientOriginalName(); //give a unique name using current time.
+            $image->move('images', $image_new_name); //move this image to the images folder.
+            $post = new Image; //create Image record.
+            $post->user_id = Auth::user()->id; //set image user_id to the currently authenticated user.
             $post->image = 'images/' . $image_new_name;
             $post->save();
         }
         Session::flash('success', 'Images uploaded'); //flash success message
-        return redirect('/');
+        return redirect('/'); //redirect to main repository page
     }
 
-    //if authenticated user is the one who posted the image, allow to remove image
+    //remove image. If authenticated user is the one who posted the image, allow them to remove image.
     public function remove($id){
-        $image = Image::find($id);
-        $image->delete();
+        $image = Image::find($id); //find image using id
+        $image->delete(); //delete
         Session::flash('success', 'Images deleted'); //flash success message
-        return redirect('/');
+        return redirect('/'); //redirect to main repository page
     }
 }

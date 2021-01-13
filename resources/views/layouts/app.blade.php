@@ -78,20 +78,21 @@
         <!--display any error or success alerts after the navigation bar-->
         <div class="container mt-2">
             @if($errors->any())
-            @foreach($errors->all() as $error)
-            <div class="alert alert-danger">{{ $error }}</div>
-            @endforeach
+                @foreach($errors->all() as $error)
+                    <div class="alert alert-danger">{{ $error }}</div>
+                @endforeach
             @endif    
             @if(Session::has('success'))
-            <div class="alert alert-success">{{ Session::get('success') }}</div>
+                <div class="alert alert-success">{{ Session::get('success') }}</div>
             @endif
         </div>
 
-        <!--this yields the content for other content-->
+        <!--yield the content for pages that extend from this one-->
         <main class="py-4">
             @yield('content')
         </main>
 
+        <!--disclaimer-->
         <div class="container mt-2">
             *Please note that the artworks used are not finalized.
         </div>
