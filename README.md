@@ -10,7 +10,7 @@ The project is an image repository for the Summer 2021 Shopify Developer Intern 
 Extra info: 
 1. The four first default images on the site are designed and drawn by me.
 2. This project was built with PHP/Laravel, Bootstrap and deployed with Heroku. 
-3. Note that on Heroku, the app's dynos have an ephemeral filesystem. This means that files (images) you upload will disppear whenever a dyno restarts or is replaced. This is not yet addressed in this version of the challenge.
+3. Note that on Heroku, the app's dynos have an ephemeral filesystem. This means that files (images) you upload will disappear whenever a dyno restarts or is replaced. This is not yet addressed in this version of the challenge.
 
 List of future potential features (see PDF diagram files). 
 1. Search bar
