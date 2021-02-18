@@ -12,5 +12,16 @@ Extra info:
 2. This project was built with PHP/Laravel, Bootstrap and deployed with Heroku. 
 3. Note that on Heroku, the app's dynos have an ephemeral filesystem. This means that files (images) you upload will disppear whenever a dyno restarts or is replaced. This is not yet addressed in this version of the challenge.
 
+List of future potential features.
+1. Search bar
+2. Categories within search bar
+        -Photos, icons, vector graphics, illustration, videos/gifs, size compatible with shopify template
+3. On each photo from browsing user show
+        -Creator name, likes #, favorites #, comments (both on hover on main page and in details page)
+4. Allow creator to add tags for searchability 
+5. Allow creator to create paid content
+6. Visiting photo reveals more info about the creator, other works by the same author, related images with similar tags, dimensions, other infos like views, downloads and more.
+7. Share buttons
+
 Thank you :)
 -Kevin
