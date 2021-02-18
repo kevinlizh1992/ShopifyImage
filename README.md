@@ -11,6 +11,7 @@ Extra info:
 1. The four first default images on the site are designed and drawn by me.
 2. This project was built with PHP/Laravel, Bootstrap and deployed with Heroku. 
 3. Note that on Heroku, the app's dynos have an ephemeral filesystem. This means that files (images) you upload will disappear whenever a dyno restarts or is replaced. This is not yet addressed in this version of the challenge.
+   ==> Alternative: use Amazon S3 to host uploaded files https://devcenter.heroku.com/articles/s3
 
 List of future potential features (see PDF diagram files). 
 1. Search bar
